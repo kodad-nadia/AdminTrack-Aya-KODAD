@@ -1,0 +1,16 @@
+<div class="container" style="max-width:520px;">
+  <div class="card">
+    <h2>Créer un dossier</h2>
+
+    <input [(ngModel)]="titre" name="titre" placeholder="Titre du dossier (ex. Renouvellement titre de séjour 2026)">
+
+    <select [(ngModel)]="typeDemarcheId" name="typeDemarcheId">
+      <option [ngValue]="null">-- Choisir un type de démarche --</option>
+      <option *ngFor="let t of types" [ngValue]="t.id">{{ t.nom }} ({{ t.delaiLegalJours }} jours)</option>
+    </select>
+
+    <p *ngIf="erreur" style="color:#ea4335;">{{ erreur }}</p>
+
+    <button class="btn" (click)="submit()">Créer le dossier</button>
+  </div>
+</div>

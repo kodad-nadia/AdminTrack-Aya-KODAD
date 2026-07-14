@@ -1,0 +1,15 @@
+<div class="container">
+  <h2>Administration — Types de démarches</h2>
+
+  <div class="card">
+    <h3>Ajouter un type de démarche</h3>
+    <input [(ngModel)]="nom" name="nom" placeholder="Nom (ex. Renouvellement carte grise)">
+    <input [(ngModel)]="organisme" name="organisme" placeholder="Organisme (ex. Préfecture)">
+    <input [(ngModel)]="delaiLegalJours" name="delaiLegalJours" type="number" placeholder="Délai légal (jours)">
+    <button class="btn" (click)="ajouter()">Ajouter</button>
+  </div>
+
+  <div class="card" *ngFor="let t of types">
+    <strong>{{ t.nom }}</strong> — {{ t.organisme }} — {{ t.delaiLegalJours }} jours
+  </div>
+</div>

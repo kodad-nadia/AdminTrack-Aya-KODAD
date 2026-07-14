@@ -1,0 +1,24 @@
+<div class="container">
+  <div style="display:flex;justify-content:space-between;align-items:center;">
+    <h2>Mon tableau de bord</h2>
+    <div>
+      <a routerLink="/dossiers/nouveau" class="btn">+ Nouveau dossier</a>
+      <a *ngIf="auth.isAdmin()" routerLink="/admin" class="btn" style="margin-left:8px;background:#555;">Administration</a>
+    </div>
+  </div>
+
+  <div class="card" *ngFor="let d of dossiers">
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <div>
+        <a [routerLink]="['/dossiers', d.id]" style="font-weight:bold;font-size:16px;color:#1f4e79;">{{ d.titre }}</a>
+        <p style="margin:4px 0;color:#666;">{{ d.typeDemarche }}</p>
+        <p style="margin:0;font-size:13px;color:#888;" *ngIf="d.echeanceDateLimite">
+          Échéance : {{ d.echeanceDateLimite }}
+        </p>
+      </div>
+      <span [class]="badgeClass(d.statut)">{{ d.statut }}</span>
+    </div>
+  </div>
+
+  <p *ngIf="dossiers.length === 0" style="color:#888;">Aucun dossier pour le moment. Créez-en un pour commencer.</p>
+</div>

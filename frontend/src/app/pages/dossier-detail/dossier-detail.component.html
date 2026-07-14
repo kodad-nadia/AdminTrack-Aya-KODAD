@@ -1,0 +1,13 @@
+<div class="container" *ngIf="dossier">
+  <div class="card">
+    <h2>{{ dossier.titre }}</h2>
+    <p><strong>Type de démarche :</strong> {{ dossier.typeDemarche }}</p>
+    <p><strong>Statut :</strong> {{ dossier.statut }}</p>
+    <p *ngIf="dossier.echeanceDateLimite"><strong>Échéance légale :</strong> {{ dossier.echeanceDateLimite }}</p>
+    <p><strong>Documents joints :</strong> {{ dossier.nombreDocuments }}</p>
+
+    <button class="btn" *ngIf="dossier.echeanceDepassee" (click)="genererCourrier()">
+      Générer un courrier de relance
+    </button>
+  </div>
+</div>

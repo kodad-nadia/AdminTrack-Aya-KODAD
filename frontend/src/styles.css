@@ -1,0 +1,25 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f4f6f9;
+  color: #222;
+}
+.container { max-width: 960px; margin: 0 auto; padding: 24px; }
+.btn {
+  background: #1f4e79; color: #fff; border: none; padding: 10px 18px;
+  border-radius: 6px; cursor: pointer; font-size: 14px;
+}
+.btn:hover { background: #163a5c; }
+.card {
+  background: #fff; border-radius: 8px; padding: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 16px;
+}
+input, select {
+  width: 100%; padding: 8px; margin-bottom: 12px;
+  border: 1px solid #ccc; border-radius: 4px;
+}
+.badge { padding: 4px 10px; border-radius: 12px; font-size: 12px; color: #fff; }
+.badge-ok { background: #34a853; }
+.badge-proche { background: #f9ab00; }
+.badge-depasse { background: #ea4335; }
